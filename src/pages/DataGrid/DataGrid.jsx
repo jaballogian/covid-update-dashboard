@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 // SERVICES
-import { getCovidCountryListApi } from 'services/covid/getCovidApi'
+import { fotmatGetCovidCountryListApi } from 'services/covid/getCovidApi'
 
 // STYLES
 import useStyles from './dataGridUseStyles'
@@ -9,13 +9,13 @@ import useStyles from './dataGridUseStyles'
 const DataGrid = () => {
   const classes = useStyles()
 
-  const fetchGetCovidCountryListApi = async () => {
-    const data = await getCovidCountryListApi()
+  const fetchFormatGetCovidCountryListApi = async () => {
+    const data = await fotmatGetCovidCountryListApi()
     console.log(data)
   }
 
   useEffect(() => {
-    fetchGetCovidCountryListApi()
+    fetchFormatGetCovidCountryListApi()
   }, [])
 
   return (
