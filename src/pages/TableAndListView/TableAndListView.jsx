@@ -20,13 +20,13 @@ const TableAndListView = () => {
       field: 'no',
       headerName: '#',
       flex: 0,
-      width: 100,
+      width: 50,
     },
     {
       field: 'name',
       headerName: 'Country',
       flex: 1,
-      minWidth: 300,
+      minWidth: 150,
       renderCell: (params) => (
         <div className={classes.flexContainer}>
           {console.log(params)}
@@ -45,49 +45,49 @@ const TableAndListView = () => {
       field: 'formatted_latest_confirmed',
       headerName: 'Total Cases',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_today_confirmed',
       headerName: 'Today New Cases',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_latest_deaths',
       headerName: 'Total Deaths',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_today_deaths',
       headerName: 'Today New Deaths',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_latest_recovered',
       headerName: 'Total Recovered',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_death_rate',
       headerName: 'Death Rate',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'formatted_recovery_rate',
       headerName: 'Recovery Rate',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
     {
       field: 'population',
       headerName: 'Population',
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
     },
   ]
 
@@ -114,6 +114,7 @@ const TableAndListView = () => {
         columns={columns}
         pagination
         rowsPerPageOptions={[ 10, 25, 50 ]}
+        disableColumnMenu
       />
     </div>
   )
