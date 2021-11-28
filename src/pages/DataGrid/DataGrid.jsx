@@ -10,7 +10,14 @@ const DataGrid = () => {
   const classes = useStyles()
 
   const fetchFormatGetCovidCountryListApi = async () => {
-    const data = await fotmatGetCovidCountryListApi()
+    let data = await fotmatGetCovidCountryListApi()
+
+    data = data.map((item, index) => {
+      return {
+        ...item,
+        no: index + 1,
+      }
+    })
     console.log(data)
   }
 
