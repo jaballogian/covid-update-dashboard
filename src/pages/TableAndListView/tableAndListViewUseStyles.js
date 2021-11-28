@@ -7,6 +7,12 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     overflow: 'hidden',
   },
+  flexContainer: {
+    display: 'flex',
+  },
+  dataGridCountryName: {
+    marginRight: 20,
+  },
 }))
 
 export default useStyles

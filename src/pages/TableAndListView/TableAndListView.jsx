@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // MATERIAL UI
+import Typography from '@mui/material/Typography'
 import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
@@ -21,7 +22,25 @@ const TableAndListView = () => {
       flex: 0,
       width: 100,
     },
-    // FORMATTED COUNTRY HERE,
+    {
+      field: 'name',
+      headerName: 'Country',
+      flex: 1,
+      minWidth: 300,
+      renderCell: (params) => (
+        <div className={classes.flexContainer}>
+          {console.log(params)}
+          <img
+            src={`https://flagcdn.com/w20/${params.row.code.toLowerCase()}.png`}
+            alt=''
+            className={classes.dataGridCountryName}
+          />
+          <Typography variant='subtitle2'>
+            {params.value}
+          </Typography>
+        </div>
+      ),
+    },
     {
       field: 'formatted_latest_confirmed',
       headerName: 'Total Cases',
