@@ -7,7 +7,7 @@ import { DataGrid } from '@mui/x-data-grid'
 import { fotmatGetCovidCountryListApi } from 'services/covid/getCovidApi'
 
 // STYLES
-import useStyles from './dataGridUseStyles'
+import useStyles from './tableAndListViewUseStyles'
 
 const TableAndListView = () => {
   const classes = useStyles()
