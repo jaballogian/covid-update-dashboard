@@ -16,6 +16,7 @@ export const fotmatGetCovidCountryListApi = async () => {
   const output = rawData.data.map(item => {
     return {
       ...item,
+      id: item.code,
       formatted_country: {
         name: item.name,
         code: item.code,
