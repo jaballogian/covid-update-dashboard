@@ -1,12 +1,12 @@
 import React from 'react'
 
 // PAGES
-import DataGrid from 'pages/DataGrid/DataGrid'
+import TableAndListView from 'pages/TableAndListView/TableAndListView'
 
 function App() {
   return (
     <div>
-      <DataGrid/>
+      <TableAndListView/>
     </div>
   )
 }
