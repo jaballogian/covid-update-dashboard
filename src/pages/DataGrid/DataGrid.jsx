@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+
+// MATERIAL UI
+import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
 import { fotmatGetCovidCountryListApi } from 'services/covid/getCovidApi'
@@ -6,8 +9,10 @@ import { fotmatGetCovidCountryListApi } from 'services/covid/getCovidApi'
 // STYLES
 import useStyles from './dataGridUseStyles'
 
-const DataGrid = () => {
+const TableAndListView = () => {
   const classes = useStyles()
+
+  const [ tableData, setTableData ] = useState([])
 
   const columns = [
     {
@@ -76,7 +81,7 @@ const DataGrid = () => {
         no: index + 1,
       }
     })
-    console.log(data)
+    setTableData(data)
   }
 
   useEffect(() => {
@@ -85,9 +90,14 @@ const DataGrid = () => {
 
   return (
     <div className={classes.dataGridroot}>
-      Data Grid
+      <DataGrid
+        rows={tableData}
+        columns={columns}
+        pagination
+        rowsPerPageOptions={[ 10, 25, 50 ]}
+      />
     </div>
   )
 }
 
-export default DataGrid
+export default TableAndListView
