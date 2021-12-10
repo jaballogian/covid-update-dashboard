@@ -11,9 +11,8 @@ export const getCovidCountryListApi = async () => {
   return responseJson
 }
 
-export const fotmatGetCovidCountryListApi = async () => {
-  const rawData = await getCovidCountryListApi()
-  const output = rawData.data.map(item => {
+export const fotmatGetCovidCountryListApi = (inputData) => {
+  const output = inputData.map(item => {
     return {
       ...item,
       id: item.code,
