@@ -5,7 +5,10 @@ import Typography from '@mui/material/Typography'
 import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
-import { fotmatGetCovidCountryListApi } from 'services/covid/getCovidApi'
+import { 
+  getCovidCountryListApi, 
+  fotmatGetCovidCountryListApi, 
+} from 'services/covid/getCovidApi'
 
 // STYLES
 import useStyles from './tableAndListViewUseStyles'
@@ -29,7 +32,6 @@ const TableAndListView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <div className={classes.flexContainer}>
-          {console.log(params)}
           <img
             src={`https://flagcdn.com/w20/${params.row.code.toLowerCase()}.png`}
             alt=''
@@ -92,7 +94,8 @@ const TableAndListView = () => {
   ]
 
   const fetchFormatGetCovidCountryListApi = async () => {
-    let data = await fotmatGetCovidCountryListApi()
+    let data = await getCovidCountryListApi()
+    data = fotmatGetCovidCountryListApi(data.data)
 
     data = data.map((item, index) => {
       return {
