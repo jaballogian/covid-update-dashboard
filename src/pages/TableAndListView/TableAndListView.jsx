@@ -14,6 +14,7 @@ const TableAndListView = () => {
   const classes = useStyles()
 
   const [ tableData, setTableData ] = useState([])
+  const [ pageSize, setPageSize ] = useState(10)
 
   const columns = [
     {
@@ -112,8 +113,9 @@ const TableAndListView = () => {
       <DataGrid
         rows={tableData}
         columns={columns}
-        pagination
-        rowsPerPageOptions={[ 10, 25, 50 ]}
+        pageSize={pageSize}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        rowsPerPageOptions={[ 10, 25, 50, 100 ]}
         disableColumnMenu
       />
     </div>
