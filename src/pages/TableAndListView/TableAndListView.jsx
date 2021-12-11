@@ -5,10 +5,7 @@ import Typography from '@mui/material/Typography'
 import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
-import { 
-  getYesterdayCovidCountryListApi, 
-  fotmatGetYesterdayCovidCountryListApi, 
-} from 'services/covid/getCovidApi'
+import { getYesterdayCovidCountryListApi } from 'services/covid/getCovidApi'
 
 // STYLES
 import useStyles from './tableAndListViewUseStyles'
@@ -95,11 +92,11 @@ const TableAndListView = () => {
 
   const fetchFotmatGetYesterdayCovidCountryListApi = async () => {
     let data = await getYesterdayCovidCountryListApi()
-    data = fotmatGetYesterdayCovidCountryListApi(data)
     
     data = data.map((item, index) => {
       return {
         ...item,
+        id: item.country,
         no: index + 1,
       }
     })
