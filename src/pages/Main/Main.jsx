@@ -1,7 +1,7 @@
 import React from 'react'
 
 // COMPONENTS
-import TableAndListView from './TableAndListView/TableAndListView'
+import TableView from './TableView/TableView'
 
 // USE STYLES
 import useStyles from './mainUseStyles'
@@ -9,7 +9,7 @@ import useStyles from './mainUseStyles'
 const Main = () => {
   return (
     <div>
-      <TableAndListView/>
+      <TableView/>
     </div>
   )
 }
