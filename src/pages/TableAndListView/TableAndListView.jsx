@@ -89,6 +89,12 @@ const TableAndListView = () => {
       flex: 1,
       minWidth: 150,
     },
+    {
+      field: 'updated',
+      headerName: 'Updated At',
+      flex: 1,
+      minWidth: 150,
+    },
   ]
 
   const fetchGetYesterdayCovidCountryListApi = async () => {
