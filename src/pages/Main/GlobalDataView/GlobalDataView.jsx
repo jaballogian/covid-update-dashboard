@@ -43,6 +43,7 @@ const GlobalDataView = () => {
         {cardList.map((item, index) => (
           <Grid 
             key={index}
+            item
             xs={12}
             md={4}
           >
