@@ -38,10 +38,9 @@ const FilterView = () => {
         value={search}
         onChange={(event, newValue) => setSearch(newValue)}
         options={dummyCountryList}
-        autoHighlight
         getOptionLabel={(option) => option.country}
         renderOption={(props, option) => (
-          <div>
+          <div {...props}>
             <img
               src={option.countryInfo.flag}
               alt=''
@@ -53,9 +52,6 @@ const FilterView = () => {
           <TextField
             {...params}
             label='Search'
-            inputProps={{
-              ...params.inputProps,
-            }}
           />
         )}
       />
