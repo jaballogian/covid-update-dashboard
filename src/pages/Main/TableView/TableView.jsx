@@ -17,11 +17,13 @@ const TableView = () => {
   const { 
     covidCountryListData, 
     changeCovidCountryListData, 
+    search,
   } = useContext(PageMainContext)
 
   const classes = useStyles()
 
   const [ pageSize, setPageSize ] = useState(25)
+  const [ filteredData, setFilteredData ] = useState([])
 
   const columns = [
     {
@@ -113,13 +115,20 @@ const TableView = () => {
   }
 
   useEffect(() => {
+    if(search) {
+      const newData = covidCountryListData.filter(item => item.country === search.country)
+      setFilteredData(newData)
+    }
+  }, [search])
+
+  useEffect(() => {
     fetchGetYesterdayCovidCountryListApi()
   }, [])
 
   return (
     <div className={classes.dataGridroot}>
       <DataGrid
-        rows={covidCountryListData}
+        rows={search ? filteredData : covidCountryListData}
         columns={columns}
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
