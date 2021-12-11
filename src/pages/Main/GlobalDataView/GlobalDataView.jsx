@@ -27,7 +27,7 @@ const GlobalDataView = () => {
       value: globalData.deaths,
     },
     {
-      title: 'Total Recovery',
+      title: 'Total Recovered',
       value: globalData.recovered,
     },
   ]
