@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 
 // CONTEXTS
 import { PageMainContext } from 'contexts/PageMainContext'
@@ -18,9 +18,9 @@ const FilterView = () => {
     covidCountryListData,
     search,
     changeSearch, 
+    generalOrDetail, 
+    changeGeneralOrDetail,
   } = useContext(PageMainContext)
-
-  const [ generalOrDetail, setGeneralOrDetail ] = useState('general')
 
   return (
     <>
@@ -52,7 +52,7 @@ const FilterView = () => {
         color='primary'
         exclusive
         value={generalOrDetail}
-        onChange={(event, newValue) => setGeneralOrDetail(newValue)}
+        onChange={(event, newValue) => changeGeneralOrDetail(newValue)}
       >
         <ToggleButton value='general'>
           <IconVisibilityOff/>
