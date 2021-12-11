@@ -11,6 +11,22 @@ const GlobalDataView = () => {
     setGlobalData(data)
   }
 
+  const cardList = globalData &&
+  [
+    {
+      title: 'Total Cases',
+      value: globalData.cases,
+    },
+    {
+      title: 'Total Deaths',
+      value: globalData.deaths,
+    },
+    {
+      title: 'Total Recovery',
+      value: globalData.recovered,
+    },
+  ]
+
   useEffect(() => {
     fetchGetYesterdayCovidGlobalData()
   }, [])
