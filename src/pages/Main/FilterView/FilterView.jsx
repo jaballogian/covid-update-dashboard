@@ -8,15 +8,17 @@ import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 
 const FilterView = () => {
-  const { covidCountryListData } = useContext(PageMainContext)
-
-  const [ search, setSearch ] = useState(null)
+  const { 
+    covidCountryListData,
+    search,
+    changeSearch, 
+  } = useContext(PageMainContext)
 
   return (
     <>
       <Autocomplete
         value={search}
-        onChange={(event, newValue) => setSearch(newValue)}
+        onChange={(event, newValue) => changeSearch(newValue)}
         options={covidCountryListData}
         getOptionLabel={(option) => option.country}
         renderOption={(props, option) => (
