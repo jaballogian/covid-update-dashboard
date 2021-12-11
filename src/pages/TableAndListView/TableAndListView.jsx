@@ -26,16 +26,16 @@ const TableAndListView = () => {
       width: 50,
     },
     {
-      field: 'name',
+      field: 'country',
       headerName: 'Country',
       flex: 1,
       minWidth: 150,
       renderCell: (params) => (
         <div className={classes.flexContainer}>
           <img
-            src={`https://flagcdn.com/w20/${params.row.code.toLowerCase()}.png`}
+            src={params.row.countryInfo.flag}
             alt=''
-            className={classes.dataGridCountryName}
+            className={classes.dataGridCountryFlag}
           />
           <Typography variant='subtitle2'>
             {params.value}
@@ -44,44 +44,44 @@ const TableAndListView = () => {
       ),
     },
     {
-      field: 'formatted_latest_confirmed',
+      field: 'cases',
       headerName: 'Total Cases',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_today_confirmed',
+      field: 'todayCases',
       headerName: 'Today New Cases',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_latest_deaths',
+      field: 'deaths',
       headerName: 'Total Deaths',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_today_deaths',
+      field: 'todayDeaths',
       headerName: 'Today New Deaths',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_latest_recovered',
+      field: 'recovered',
       headerName: 'Total Recovered',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_death_rate',
-      headerName: 'Death Rate',
+      field: 'todayRecovered',
+      headerName: 'Today Recovered',
       flex: 1,
       minWidth: 150,
     },
     {
-      field: 'formatted_recovery_rate',
-      headerName: 'Recovery Rate',
+      field: 'tests',
+      headerName: 'Total Test',
       flex: 1,
       minWidth: 150,
     },
