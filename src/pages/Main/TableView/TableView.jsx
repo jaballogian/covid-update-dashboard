@@ -14,7 +14,7 @@ const TableView = () => {
   const classes = useStyles()
 
   const [ tableData, setTableData ] = useState([])
-  const [ pageSize, setPageSize ] = useState(10)
+  const [ pageSize, setPageSize ] = useState(25)
 
   const columns = [
     {
