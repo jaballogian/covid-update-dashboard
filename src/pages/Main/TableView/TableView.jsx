@@ -8,9 +8,9 @@ import { DataGrid } from '@mui/x-data-grid'
 import { getYesterdayCovidCountryListApi } from 'services/covid/getCovidApi'
 
 // STYLES
-import useStyles from './tableAndListViewUseStyles'
+import useStyles from './tableViewUseStyles'
 
-const TableAndListView = () => {
+const TableView = () => {
   const classes = useStyles()
 
   const [ tableData, setTableData ] = useState([])
@@ -122,4 +122,4 @@ const TableAndListView = () => {
   )
 }
 
-export default TableAndListView
+export default TableView
