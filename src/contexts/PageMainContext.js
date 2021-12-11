@@ -9,6 +9,9 @@ const PageMainContextProvider = (props) => {
   // OBJECT
   const [ search, setSearch ] = useState(null)
 
+  // STRING
+  const [ generalOrDetail, setGeneralOrDetail ] = useState('general')
+
   const changeCovidCountryListData = (inputListData) => {
     setCovidCountryListData(inputListData)
   }
@@ -17,11 +20,16 @@ const PageMainContextProvider = (props) => {
     setSearch(inputObject)
   }
 
+  const changeGeneralOrDetail = (inputState) => {
+    setGeneralOrDetail(inputState)
+  }
+
   return (
     <PageMainContext.Provider
       value={{
         covidCountryListData, changeCovidCountryListData,
         search, changeSearch,
+        generalOrDetail, changeGeneralOrDetail,
       }}
     >
       {props['children']}
