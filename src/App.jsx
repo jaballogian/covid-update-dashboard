@@ -1,12 +1,12 @@
 import React from 'react'
 
 // PAGES
-import TableAndListView from 'pages/TableAndListView/TableAndListView'
+import Main from 'pages/Main/Main'
 
 function App() {
   return (
     <div>
-      <TableAndListView/>
+      <Main/>
     </div>
   )
 }
