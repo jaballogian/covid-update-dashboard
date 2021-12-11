@@ -6,8 +6,8 @@ import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
 import { 
-  getCovidCountryListApi, 
-  fotmatGetCovidCountryListApi, 
+  getYesterdayCovidCountryListApi, 
+  fotmatGetYesterdayCovidCountryListApi, 
 } from 'services/covid/getCovidApi'
 
 // STYLES
@@ -93,10 +93,10 @@ const TableAndListView = () => {
     },
   ]
 
-  const fetchFormatGetCovidCountryListApi = async () => {
-    let data = await getCovidCountryListApi()
-    data = fotmatGetCovidCountryListApi(data.data)
-
+  const fetchFotmatGetYesterdayCovidCountryListApi = async () => {
+    let data = await getYesterdayCovidCountryListApi()
+    data = fotmatGetYesterdayCovidCountryListApi(data)
+    
     data = data.map((item, index) => {
       return {
         ...item,
@@ -107,7 +107,7 @@ const TableAndListView = () => {
   }
 
   useEffect(() => {
-    fetchFormatGetCovidCountryListApi()
+    fetchFotmatGetYesterdayCovidCountryListApi()
   }, [])
 
   return (
