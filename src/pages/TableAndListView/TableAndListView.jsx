@@ -91,7 +91,7 @@ const TableAndListView = () => {
     },
   ]
 
-  const fetchFotmatGetYesterdayCovidCountryListApi = async () => {
+  const fetchGetYesterdayCovidCountryListApi = async () => {
     let data = await getYesterdayCovidCountryListApi()
     
     data = data.map((item, index) => {
@@ -105,7 +105,7 @@ const TableAndListView = () => {
   }
 
   useEffect(() => {
-    fetchFotmatGetYesterdayCovidCountryListApi()
+    fetchGetYesterdayCovidCountryListApi()
   }, [])
 
   return (
