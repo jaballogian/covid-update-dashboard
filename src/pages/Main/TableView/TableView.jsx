@@ -30,11 +30,12 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <div className={classes.flexContainer}>
+          {params.row.countryInfo._id &&
           <img
             src={params.row.countryInfo.flag}
             alt=''
             className={classes.dataGridCountryFlag}
-          />
+          />}
           <Typography variant='subtitle2'>
             {params.value}
           </Typography>
