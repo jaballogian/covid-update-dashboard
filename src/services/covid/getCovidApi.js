@@ -9,13 +9,3 @@ export const getYesterdayCovidCountryListApi = async () => {
   const responseJson = await response.json()
   return responseJson
 }
-
-export const fotmatGetYesterdayCovidCountryListApi = (inputData) => {
-  const output = inputData.map(item => {
-    return {
-      ...item,
-      id: item.country,
-    }
-  })
-  return output
-}
