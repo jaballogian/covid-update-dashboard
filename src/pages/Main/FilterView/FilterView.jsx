@@ -1,5 +1,9 @@
 import React from 'react'
 
+// MUI
+import Autocomplete from '@mui/material/Autocomplete'
+import TextField from '@mui/material/TextField'
+
 const FilterView = () => {
   const dummyCountryList = [
     {
@@ -27,9 +31,31 @@ const FilterView = () => {
   ]
 
   return (
-    <div>
-      Filter View
-    </div>
+    <>
+      <Autocomplete
+        options={dummyCountryList}
+        autoHighlight
+        getOptionLabel={(option) => option.country}
+        renderOption={(props, option) => (
+          <div>
+            <img
+              src={option.countryInfo.flag}
+              alt=''
+            />
+            {option.country} ({option.countryInfo.iso3})
+          </div>
+        )}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label='Search'
+            inputProps={{
+              ...params.inputProps,
+            }}
+          />
+        )}
+      />
+    </>
   )
 }
 
