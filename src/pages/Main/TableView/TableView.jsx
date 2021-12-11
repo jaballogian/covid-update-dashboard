@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+
+// CONTEXTS
+import { PageMainContext } from 'contexts/PageMainContext'
 
 // MATERIAL UI
 import Typography from '@mui/material/Typography'
@@ -11,9 +14,13 @@ import { getYesterdayCovidCountryListApi } from 'services/covid/getCovidApi'
 import useStyles from './tableViewUseStyles'
 
 const TableView = () => {
+  const { 
+    covidCountryListData, 
+    changeCovidCountryListData, 
+  } = useContext(PageMainContext)
+
   const classes = useStyles()
 
-  const [ tableData, setTableData ] = useState([])
   const [ pageSize, setPageSize ] = useState(25)
 
   const columns = [
@@ -102,7 +109,7 @@ const TableView = () => {
         no: index + 1,
       }
     })
-    setTableData(data)
+    changeCovidCountryListData(data)
   }
 
   useEffect(() => {
@@ -112,7 +119,7 @@ const TableView = () => {
   return (
     <div className={classes.dataGridroot}>
       <DataGrid
-        rows={tableData}
+        rows={covidCountryListData}
         columns={columns}
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
