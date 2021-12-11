@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // MUI
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 
 const FilterView = () => {
+  const [ search, setSearch ] = useState(null)
+
   const dummyCountryList = [
     {
       country: 'Afghanistan',
@@ -33,6 +35,8 @@ const FilterView = () => {
   return (
     <>
       <Autocomplete
+        value={search}
+        onChange={(event, newValue) => setSearch(newValue)}
         options={dummyCountryList}
         autoHighlight
         getOptionLabel={(option) => option.country}
