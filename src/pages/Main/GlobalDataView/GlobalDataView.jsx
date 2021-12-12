@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography'
 // SERVICES
 import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 
+// UTILS
+import { convertTimestampToStringDate } from 'utils/formatDate'
+
 const GlobalDataView = () => {
   const [ globalData, setGlobalData ] = useState(null)
 
@@ -30,6 +33,10 @@ const GlobalDataView = () => {
       title: 'Total Recovered',
       value: globalData.recovered,
     },
+    {
+      title: 'Updated At',
+      value: convertTimestampToStringDate(globalData.updated / 1000),
+    },
   ]
 
   useEffect(() => {
@@ -45,7 +52,7 @@ const GlobalDataView = () => {
             key={index}
             item
             xs={12}
-            md={4}
+            md={3}
           >
             <Card>
               {/* TITLE */}
