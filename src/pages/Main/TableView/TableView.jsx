@@ -13,11 +13,15 @@ import { getYesterdayCovidCountryListApi } from 'services/covid/getCovidApi'
 // STYLES
 import useStyles from './tableViewUseStyles'
 
+// UTILS
+import { abbreviateNumber } from 'utils/formatNumberView'
+
 const TableView = () => {
   const { 
     covidCountryListData, 
     changeCovidCountryListData, 
     search,
+    abbreviatedOrDetail,
   } = useContext(PageMainContext)
 
   const classes = useStyles()
@@ -56,6 +60,13 @@ const TableView = () => {
       headerName: 'Total Cases',
       flex: 1,
       minWidth: 150,
+      renderCell: (params) => (
+        <Typography variant='subtitle2'>
+          {abbreviatedOrDetail === 'abbreviated' ?
+          abbreviateNumber(params.value) :
+          params.value}
+        </Typography>
+      ),
     },
     {
       field: 'todayCases',
