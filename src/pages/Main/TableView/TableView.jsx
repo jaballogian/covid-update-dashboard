@@ -112,6 +112,13 @@ const TableView = () => {
       headerName: 'Total Recovered',
       flex: 1,
       minWidth: 150,
+      renderCell: (params) => (
+        <Typography variant='subtitle2'>
+          {abbreviatedOrDetail === 'abbreviated' ?
+          abbreviateNumber(params.value) :
+          params.value}
+        </Typography>
+      ),
     },
     {
       field: 'todayRecovered',
