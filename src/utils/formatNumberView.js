@@ -1,14 +1,7 @@
 export const abbreviateNumber = (inputNumber) => {
-  let fixed = 0
-  if (inputNumber === null) return null
-  else if (inputNumber === 0) return 0
-
-  fixed = (!fixed || fixed < 0) ? 0 : fixed
-
-  const b = (inputNumber).toPrecision(2).split('e'),
-    k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3),
-    c = k < 1 ? inputNumber.toFixed(0 + fixed) : (inputNumber / Math.pow(10, k * 3) ).toFixed(1 + fixed),
-    d = c < 0 ? c : Math.abs(c),
-    e = d + ['', ' K', ' M', ' B', ' T'][k]
-  return e
+  if (inputNumber < 1e3) return inputNumber
+  if (inputNumber >= 1e3 && inputNumber < 1e6) return +(inputNumber / 1e3).toFixed(1) + ' K'
+  if (inputNumber >= 1e6 && inputNumber < 1e9) return +(inputNumber / 1e6).toFixed(1) + ' M'
+  if (inputNumber >= 1e9 && inputNumber < 1e12) return +(inputNumber / 1e9).toFixed(1) + ' B'
+  if (inputNumber >= 1e12) return +(inputNumber / 1e12).toFixed(1) + ' T'
 }
