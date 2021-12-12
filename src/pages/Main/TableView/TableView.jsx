@@ -64,7 +64,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -77,7 +77,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -90,7 +90,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -103,7 +103,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -116,7 +116,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -129,7 +129,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -142,7 +142,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
@@ -155,7 +155,7 @@ const TableView = () => {
         <Typography variant='subtitle2'>
           {abbreviatedOrDetail === 'abbreviated' ?
           abbreviateNumber(params.value) :
-          params.value}
+          params.value.toLocaleString()}
         </Typography>
       ),
     },
