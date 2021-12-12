@@ -21,7 +21,7 @@ const TableView = () => {
     covidCountryListData, 
     changeCovidCountryListData, 
     search,
-    abbreviatedOrDetail,
+    isAbbreviated,
   } = useContext(PageMainContext)
 
   const classes = useStyles()
@@ -62,7 +62,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -75,7 +75,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -88,7 +88,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -101,7 +101,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -114,7 +114,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -127,7 +127,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -140,7 +140,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
@@ -153,7 +153,7 @@ const TableView = () => {
       minWidth: 150,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
-          {abbreviatedOrDetail === 'abbreviated' ?
+          {isAbbreviated ?
           abbreviateNumber(params.value) :
           params.value.toLocaleString()}
         </Typography>
