@@ -3,6 +3,7 @@ import React from 'react'
 // COMPONENTS
 import GlobalDataView from './GlobalDataView/GlobalDataView'
 import FilterView from './FilterView/FilterView'
+import ListView from './ListView/ListView'
 import TableView from './TableView/TableView'
 
 const Main = () => {
@@ -10,6 +11,7 @@ const Main = () => {
     <div>
       <GlobalDataView/>
       <FilterView/>
+      <ListView/>
       <TableView/>
     </div>
   )
