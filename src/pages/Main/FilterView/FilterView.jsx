@@ -18,8 +18,8 @@ const FilterView = () => {
     covidCountryListData,
     search,
     changeSearch, 
-    generalOrDetail, 
-    changeGeneralOrDetail,
+    abbreviatedOrDetail, 
+    changeAbbreviatedOrDetail,
   } = useContext(PageMainContext)
 
   return (
@@ -51,12 +51,12 @@ const FilterView = () => {
       <ToggleButtonGroup
         color='primary'
         exclusive
-        value={generalOrDetail}
-        onChange={(event, newValue) => changeGeneralOrDetail(newValue)}
+        value={abbreviatedOrDetail}
+        onChange={(event, newValue) => changeAbbreviatedOrDetail(newValue)}
       >
-        <ToggleButton value='general'>
+        <ToggleButton value='abbreviated'>
           <IconVisibilityOff/>
-          General
+          Abbreviated
         </ToggleButton>
         <ToggleButton value='detail'>
           <IconVisibility/>
