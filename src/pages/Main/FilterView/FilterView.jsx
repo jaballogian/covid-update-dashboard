@@ -5,21 +5,18 @@ import { PageMainContext } from 'contexts/PageMainContext'
 
 // MUI
 import Autocomplete from '@mui/material/Autocomplete'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Switch from '@mui/material/Switch'
 import TextField from '@mui/material/TextField'
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-
-// MUI ICONS
-import IconVisibility from '@mui/icons-material/Visibility'
-import IconVisibilityOff from '@mui/icons-material/VisibilityOff'
 
 const FilterView = () => {
   const { 
     covidCountryListData,
     search,
     changeSearch, 
-    abbreviatedOrDetail, 
-    changeAbbreviatedOrDetail,
+    isAbbreviated, 
+    changeIsAbbreviated,
   } = useContext(PageMainContext)
 
   return (
@@ -47,22 +44,15 @@ const FilterView = () => {
         )}
       />
 
-      {/* GENERAL AND DETAIL FILTER */}
-      <ToggleButtonGroup
-        color='primary'
-        exclusive
-        value={abbreviatedOrDetail}
-        onChange={(event, newValue) => changeAbbreviatedOrDetail(newValue)}
-      >
-        <ToggleButton value='abbreviated'>
-          <IconVisibilityOff/>
-          Abbreviated
-        </ToggleButton>
-        <ToggleButton value='detail'>
-          <IconVisibility/>
-          Detail
-        </ToggleButton>
-      </ToggleButtonGroup>
+      {/* ABBREVIATED FILTER */}
+      <FormGroup>
+        <FormControlLabel 
+          control={<Switch />} 
+          label='Abbreviated' 
+          checked={isAbbreviated}
+          onChange={(event) => changeIsAbbreviated(event.target.checked)}
+        />
+      </FormGroup>
     </>
   )
 }
