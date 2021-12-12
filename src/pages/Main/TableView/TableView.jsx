@@ -213,6 +213,18 @@ const TableView = () => {
       headerName: 'Total Test',
       flex: 1,
       minWidth: 150,
+      renderHeader: isDownXlScreen ? (params) => (
+        <div>
+          {params.colDef.headerName.split(' ').map((item, index) => (
+            <Typography 
+              key={index}
+              variant='subtitle2'
+            >
+              {item}
+            </Typography>
+          ))}
+        </div>
+      ) : null,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
           {isAbbreviated ?
