@@ -43,7 +43,7 @@ const TableView = () => {
       field: 'country',
       headerName: 'Country',
       flex: 1,
-      minWidth: 150,
+      minWidth: 200,
       renderCell: (params) => (
         <div className={classes.flexContainer}>
           {params.row.countryInfo._id &&
@@ -62,7 +62,7 @@ const TableView = () => {
       field: 'cases',
       headerName: 'Total Cases',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -87,7 +87,7 @@ const TableView = () => {
       field: 'todayCases',
       headerName: 'New Cases',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -112,7 +112,7 @@ const TableView = () => {
       field: 'deaths',
       headerName: 'Total Deaths',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -137,7 +137,7 @@ const TableView = () => {
       field: 'todayDeaths',
       headerName: 'New Deaths',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -162,7 +162,7 @@ const TableView = () => {
       field: 'recovered',
       headerName: 'Total Recovered',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -187,7 +187,7 @@ const TableView = () => {
       field: 'todayRecovered',
       headerName: 'Today Recovered',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -212,7 +212,7 @@ const TableView = () => {
       field: 'tests',
       headerName: 'Total Test',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderHeader: isDownXlScreen ? (params) => (
         <div>
           {params.colDef.headerName.split(' ').map((item, index) => (
@@ -237,7 +237,7 @@ const TableView = () => {
       field: 'population',
       headerName: 'Population',
       flex: 1,
-      minWidth: 150,
+      minWidth: 125,
       renderCell: (params) => (
         <Typography variant='subtitle2'>
           {isAbbreviated ?
@@ -279,7 +279,7 @@ const TableView = () => {
         columns={columns}
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-        rowsPerPageOptions={[ 10, 25, 50, 100 ]}
+        rowsPerPageOptions={[ 10, 25, 50, 125 ]}
         disableColumnMenu
       />
     </div>
