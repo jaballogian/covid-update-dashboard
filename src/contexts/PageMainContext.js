@@ -6,30 +6,30 @@ const PageMainContextProvider = (props) => {
   // ARRAY
   const [ covidCountryListData, setCovidCountryListData ] = useState([])
 
+  // BOOLEAN
+  const [ isAbbreviated, setIsAbbreviated ] = useState(true)
+
   // OBJECT
   const [ search, setSearch ] = useState(null)
 
-  // STRING
-  const [ abbreviatedOrDetail, setAbbreviatedOrDetail ] = useState('abbreviated')
-
   const changeCovidCountryListData = (inputListData) => {
     setCovidCountryListData(inputListData)
+  }
+
+  const changeIsAbbreviated = (inputState) => {
+    setIsAbbreviated(inputState)
   }
 
   const changeSearch = (inputObject) => {
     setSearch(inputObject)
   }
 
-  const changeAbbreviatedOrDetail = (inputState) => {
-    setAbbreviatedOrDetail(inputState)
-  }
-
   return (
     <PageMainContext.Provider
       value={{
         covidCountryListData, changeCovidCountryListData,
+        isAbbreviated, changeIsAbbreviated,
         search, changeSearch,
-        abbreviatedOrDetail, changeAbbreviatedOrDetail,
       }}
     >
       {props['children']}
