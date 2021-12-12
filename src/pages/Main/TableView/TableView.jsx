@@ -5,6 +5,7 @@ import { PageMainContext } from 'contexts/PageMainContext'
 
 // MATERIAL UI
 import Typography from '@mui/material/Typography'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { DataGrid } from '@mui/x-data-grid'
 
 // SERVICES
@@ -23,6 +24,8 @@ const TableView = () => {
     search,
     isAbbreviated,
   } = useContext(PageMainContext)
+
+  const isDownXlScreen = useMediaQuery((theme) => theme.breakpoints.down('xl'))
 
   const classes = useStyles()
 
