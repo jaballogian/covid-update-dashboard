@@ -30,12 +30,12 @@ const TableView = () => {
   const [ filteredData, setFilteredData ] = useState([])
 
   const columns = [
-    {
-      field: 'no',
-      headerName: '#',
-      flex: 0,
-      width: 50,
-    },
+    // {
+    //   field: 'no',
+    //   headerName: '#',
+    //   flex: 0,
+    //   width: 50,
+    // },
     {
       field: 'country',
       headerName: 'Country',
@@ -168,7 +168,7 @@ const TableView = () => {
       return {
         ...item,
         id: item.country,
-        no: index + 1,
+        // no: index + 1,
       }
     })
     changeCovidCountryListData(data)
