@@ -10,7 +10,7 @@ const PageMainContextProvider = (props) => {
   const [ search, setSearch ] = useState(null)
 
   // STRING
-  const [ generalOrDetail, setGeneralOrDetail ] = useState('general')
+  const [ abbreviatedOrDetail, setAbbreviatedOrDetail ] = useState('abbreviated')
 
   const changeCovidCountryListData = (inputListData) => {
     setCovidCountryListData(inputListData)
@@ -20,8 +20,8 @@ const PageMainContextProvider = (props) => {
     setSearch(inputObject)
   }
 
-  const changeGeneralOrDetail = (inputState) => {
-    setGeneralOrDetail(inputState)
+  const changeAbbreviatedOrDetail = (inputState) => {
+    setAbbreviatedOrDetail(inputState)
   }
 
   return (
@@ -29,7 +29,7 @@ const PageMainContextProvider = (props) => {
       value={{
         covidCountryListData, changeCovidCountryListData,
         search, changeSearch,
-        generalOrDetail, changeGeneralOrDetail,
+        abbreviatedOrDetail, changeAbbreviatedOrDetail,
       }}
     >
       {props['children']}
