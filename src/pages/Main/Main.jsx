@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // COMPONENTS
 import GlobalDataView from './GlobalDataView/GlobalDataView'
@@ -6,13 +6,19 @@ import FilterView from './FilterView/FilterView'
 import ListView from './ListView/ListView'
 import TableView from './TableView/TableView'
 
+// CONTEXTS
+import { AllPagesContext } from 'contexts/AllPagesContext'
+
 const Main = () => {
+  const { breakpointType } = useContext(AllPagesContext)
+
   return (
     <div>
       <GlobalDataView/>
       <FilterView/>
-      <ListView/>
-      <TableView/>
+      {(breakpointType === 'xs' || breakpointType === 'sm') ?
+      <ListView/> :
+      <TableView/>}
     </div>
   )
 }
