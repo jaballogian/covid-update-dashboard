@@ -45,6 +45,16 @@ const ListView = () => {
               {item.todayCases}
             </Typography>
           </div>
+
+          {/* TOTAL AND TODAY DEATHS */}
+          <div className={`${classes.flexContainer} ${classes.justifyContentSpaceBetween}`}>
+            <Typography>
+              {item.deaths}
+            </Typography>
+            <Typography>
+              {item.todayDeaths}
+            </Typography>
+          </div>
         </Grid>
       ))}
     </Grid>
