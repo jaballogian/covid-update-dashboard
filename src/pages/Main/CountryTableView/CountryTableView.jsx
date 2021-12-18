@@ -12,12 +12,12 @@ import { DataGrid } from '@mui/x-data-grid'
 import { getYesterdayCovidCountryListApi } from 'services/covid/getCovidApi'
 
 // STYLES
-import useStyles from './tableViewUseStyles'
+import useStyles from './countryTableViewUseStyles'
 
 // UTILS
 import { abbreviateNumber } from 'utils/formatNumberView'
 
-const TableView = () => {
+const CountryTableView = () => {
   const { 
     covidCountryListData, 
     changeCovidCountryListData, 
@@ -286,4 +286,4 @@ const TableView = () => {
   )
 }
 
-export default TableView
+export default CountryTableView
