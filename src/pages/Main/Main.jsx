@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 // COMPONENTS
 import GlobalDataView from './GlobalCardView/GlobalCardView'
+import GlobalGraphView from './GlobalGraphView/GlobalGraphView'
 import FilterView from './FilterView/FilterView'
 import ListView from './CountryListView/CountryListView'
 import TableView from './CountryTableView/CountryTableView'
@@ -15,6 +16,7 @@ const Main = () => {
   return (
     <div>
       <GlobalDataView/>
+      <GlobalGraphView/>
       <FilterView/>
       {(breakpointType === 'xs' || breakpointType === 'sm') ?
       <ListView/> :
