@@ -64,7 +64,10 @@ const GlobalDataView = () => {
 
       {/* CARD ITEMS */}
       {cardList &&
-      <Grid container spacing={'24px'}>
+      <Grid 
+        container 
+        spacing={'24px'}
+      >
         {cardList.map((item, index) => (
           <Grid 
             key={index}
