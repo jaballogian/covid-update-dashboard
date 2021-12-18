@@ -23,12 +23,12 @@ const GlobalGraphView = () => {
     let data = await getHistoricalCovidGlobalData()
     data = [
       {
-        title: 'Daily Cases',
+        title: 'Historical Cases',
         dateList: Object.keys(data.cases).map(key => key),
         valueList: Object.keys(data.cases).map(key => data.cases[key]),
       },
       {
-        title: 'Daily Deaths',
+        title: 'Historical Deaths',
         dateList: Object.keys(data.deaths).map(key => key),
         valueList: Object.keys(data.deaths).map(key => data.deaths[key]),
       },
