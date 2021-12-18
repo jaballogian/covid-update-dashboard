@@ -30,9 +30,9 @@ export const getGraphOptions = (inputXAxisData) => {
     },
     colors: ['#ff00ff'],
     tooltip: {
-      x: {
-        show: false
-      },
+      // x: {
+      //   show: false
+      // },
       y: {
         title: {
           formatter: function formatter(val) {
