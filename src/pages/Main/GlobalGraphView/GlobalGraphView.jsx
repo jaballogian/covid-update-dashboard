@@ -12,11 +12,17 @@ import {
 // MUI
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 
 // SERVICES
 import { getHistoricalCovidGlobalData } from 'services/covid/getCovidApi'
 
+// STYLES
+import useStyles from './globalGraphViewUseStyles'
+
 const GlobalGraphView = () => {
+  const classes = useStyles()
+
   const [ graphData, setGraphData ] = useState([])
 
   const fetchGetHistoricalCovidGlobalData = async () => {
@@ -43,8 +49,11 @@ const GlobalGraphView = () => {
   }, [])
 
   return (
-    <div>
-      <Grid container>
+    <div className={classes.globalGraphViewRoot}>
+      <Grid 
+        container
+        spacing={'24px'}
+      >
         {graphData.map((item, index) => (
           <Grid 
             key={index}
@@ -52,7 +61,16 @@ const GlobalGraphView = () => {
             xs={12}
             md={6}
           >
-            <Card>
+            <Card className={classes.itemCard}>
+              {/* TITLE */}
+              <Typography 
+                variant='h5' 
+                className={classes.cardText}
+              >
+                {item.title}
+              </Typography>
+
+              {/* CHART */}
               <ReactApexChart
                 options={getGraphOptions(item.dateList)}
                 series={getGraphSeries(item.title, item.valueList)}
