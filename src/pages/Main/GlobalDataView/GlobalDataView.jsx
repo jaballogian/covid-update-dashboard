@@ -5,6 +5,9 @@ import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
+// OTHERS
+import moment from 'moment'
+
 // SERVICES
 import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 
@@ -50,6 +53,16 @@ const GlobalDataView = () => {
 
   return (
     <div className={classes.globalDataRoot}>
+      {/* LAST UPDATED TEXT */}
+      <Typography 
+        variant='subtitle1' 
+        className={classes.lastUpdatedText}
+      >
+        {globalData && 
+        `Last updated around ${moment(globalData.updated).fromNow()}`}
+      </Typography>
+
+      {/* CARD ITEMS */}
       {cardList &&
       <Grid container spacing={'24px'}>
         {cardList.map((item, index) => (

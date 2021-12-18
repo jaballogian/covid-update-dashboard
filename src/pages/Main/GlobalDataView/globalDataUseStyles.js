@@ -6,6 +6,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     padding: 40,
   },
+  lastUpdatedText: {
+    marginBottom: 8,
+  },
   itemCard: {
     height: '100%',
     padding: 16,
