@@ -12,7 +12,7 @@ import moment from 'moment'
 import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 
 // STYLES
-import useStyles from './globalCardUseStyles'
+import useStyles from './globalCardViewUseStyles'
 
 // UTILS
 import { abbreviateNumber } from 'utils/formatNumberView'
