@@ -70,15 +70,18 @@ const GlobalGraphView = () => {
     data = [
       {
         title: 'Daily Cases',
-        data: data.cases,
+        dateList: Object.keys(data.cases).map(key => key),
+        valueList: Object.keys(data.cases).map(key => data.cases[key]),
       },
       {
         title: 'Daily Deaths',
-        data: data.deaths,
+        dateList: Object.keys(data.deaths).map(key => key),
+        valueList: Object.keys(data.deaths).map(key => data.deaths[key]),
       },
       {
         title: 'Daily Recovered',
-        data: data.recovered,
+        dateList: Object.keys(data.recovered).map(key => key),
+        valueList: Object.keys(data.recovered).map(key => data.recovered[key]),
       },
     ]
     setGraphData(data)
