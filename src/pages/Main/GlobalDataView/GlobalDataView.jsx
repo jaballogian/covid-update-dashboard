@@ -12,7 +12,6 @@ import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 import useStyles from './globalDataUseStyles'
 
 // UTILS
-import { convertTimestampToStringDate } from 'utils/formatDate'
 import { abbreviateNumber } from 'utils/formatNumberView'
 
 const GlobalDataView = () => {
@@ -32,16 +31,16 @@ const GlobalDataView = () => {
       value: abbreviateNumber(globalData.cases),
     },
     {
+      title: 'Total Actives',
+      value: abbreviateNumber(globalData.active),
+    },
+    {
       title: 'Total Deaths',
       value: abbreviateNumber(globalData.deaths),
     },
     {
       title: 'Total Recovered',
       value: abbreviateNumber(globalData.recovered),
-    },
-    {
-      title: 'Updated At',
-      value: convertTimestampToStringDate(globalData.updated / 1000),
     },
   ]
 
@@ -72,7 +71,7 @@ const GlobalDataView = () => {
 
               {/* VAlUE */}
               <Typography 
-                variant={index !== cardList.length - 1 ? 'h3' : 'h5'} 
+                variant='h3' 
                 className={classes.cardText}
               >
                 {item.value}
