@@ -32,11 +32,6 @@ const GlobalGraphView = () => {
         dateList: Object.keys(data.deaths).map(key => key),
         valueList: Object.keys(data.deaths).map(key => data.deaths[key]),
       },
-      {
-        title: 'Daily Recovered',
-        dateList: Object.keys(data.recovered).map(key => key),
-        valueList: Object.keys(data.recovered).map(key => data.recovered[key]),
-      },
     ]
     setGraphData(data)
   }
@@ -55,7 +50,7 @@ const GlobalGraphView = () => {
             key={index}
             item
             xs={12}
-            md={4}
+            md={6}
           >
             <Card>
               <ReactApexChart
