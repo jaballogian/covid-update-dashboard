@@ -66,8 +66,22 @@ const GlobalGraphView = () => {
   ]
 
   const fetchGetHistoricalCovidGlobalData = async () => {
-    const data = await getHistoricalCovidGlobalData()
-    setGraphData([data.cases, data.deaths, data.recovered])
+    let data = await getHistoricalCovidGlobalData()
+    data = [
+      {
+        title: 'Daily Cases',
+        data: data.cases,
+      },
+      {
+        title: 'Daily Deaths',
+        data: data.deaths,
+      },
+      {
+        title: 'Daily Recovered',
+        data: data.recovered,
+      },
+    ]
+    setGraphData(data)
   }
 
   useEffect(() => {
