@@ -47,3 +47,12 @@ export const getGraphOptions = (inputXAxisData) => {
     },
   }
 }
+
+export const getGraphSeries = (inputName, inputSeriesData) => {
+  return [
+    {
+      name: inputName,
+      data: inputSeriesData,
+    }
+  ]
+}
