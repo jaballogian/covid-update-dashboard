@@ -8,9 +8,9 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 // STYLES
-import useStyles from './listViewUseStyles'
+import useStyles from './countryListViewUseStyles'
 
-const ListView = () => {
+const CountryListView = () => {
   const { covidCountryListData } = useContext(PageMainContext)
 
   const classes = useStyles()
@@ -81,4 +81,4 @@ const ListView = () => {
   )
 }
 
-export default ListView
+export default CountryListView
