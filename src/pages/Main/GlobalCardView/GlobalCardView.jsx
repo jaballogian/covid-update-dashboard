@@ -12,12 +12,12 @@ import moment from 'moment'
 import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 
 // STYLES
-import useStyles from './globalDataUseStyles'
+import useStyles from './globalCardUseStyles'
 
 // UTILS
 import { abbreviateNumber } from 'utils/formatNumberView'
 
-const GlobalDataView = () => {
+const GlobalCardView = () => {
   const classes = useStyles()
 
   const [ globalData, setGlobalData ] = useState(null)
@@ -100,4 +100,4 @@ const GlobalDataView = () => {
   )
 }
 
-export default GlobalDataView
+export default GlobalCardView
