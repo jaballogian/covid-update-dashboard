@@ -3,6 +3,12 @@ import React, { useState, useEffect } from 'react'
 // APEX CHARTS
 import ReactApexChart from 'react-apexcharts'
 
+// CONFIGS
+import { 
+  getGraphOptions, 
+  getGraphSeries, 
+} from './globalGraphViewConfigurations'
+
 // MUI
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
@@ -12,58 +18,6 @@ import { getHistoricalCovidGlobalData } from 'services/covid/getCovidApi'
 
 const GlobalGraphView = () => {
   const [ graphData, setGraphData ] = useState([])
-
-  const options = {
-    chart: {
-      group: 'sparks',
-      type: 'area',
-      height: 80,
-      sparkline: {
-        enabled: true
-      },
-      dropShadow: {
-        enabled: true,
-        top: 1,
-        left: 1,
-        blur: 2,
-        opacity: 0.2
-      }
-    },
-    stroke: {
-      curve: 'smooth'
-    },
-    markers: {
-      size: 0
-    },
-    grid: {
-      padding: {
-        // top: 20,
-        // bottom: 10,
-        // left: 110
-      }
-    },
-    colors: ['#ff00ff'],
-    tooltip: {
-      x: {
-        show: false
-      },
-      y: {
-        title: {
-          formatter: function formatter(val) {
-            return ''
-          }
-        }
-      },
-      theme: 'dark'
-    }
-  }
-
-  const series = [
-    {
-      name: 'Desktops',
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-    }
-  ]
 
   const fetchGetHistoricalCovidGlobalData = async () => {
     let data = await getHistoricalCovidGlobalData()
@@ -105,8 +59,8 @@ const GlobalGraphView = () => {
           >
             <Card>
               <ReactApexChart
-                options={options}
-                series={series}
+                options={getGraphOptions(item.dateList)}
+                series={getGraphSeries(item.title, item.valueList)}
                 type='area'
                 height={200}
               />
