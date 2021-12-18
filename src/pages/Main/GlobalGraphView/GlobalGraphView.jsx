@@ -13,58 +13,57 @@ import { getHistoricalCovidGlobalData } from 'services/covid/getCovidApi'
 const GlobalGraphView = () => {
   const [ graphData, setGraphData ] = useState([])
 
-  const spark1 = {
-    options: {
-      chart: {
-        group: 'sparks',
-        type: 'area',
-        height: 80,
-        sparkline: {
-          enabled: true
-        },
-        dropShadow: {
-          enabled: true,
-          top: 1,
-          left: 1,
-          blur: 2,
-          opacity: 0.2
-        }
+  const options = {
+    chart: {
+      group: 'sparks',
+      type: 'area',
+      height: 80,
+      sparkline: {
+        enabled: true
       },
-      stroke: {
-        curve: 'smooth'
-      },
-      markers: {
-        size: 0
-      },
-      grid: {
-        padding: {
-          // top: 20,
-          // bottom: 10,
-          // left: 110
-        }
-      },
-      colors: ['#ff00ff'],
-      tooltip: {
-        x: {
-          show: false
-        },
-        y: {
-          title: {
-            formatter: function formatter(val) {
-              return ''
-            }
-          }
-        },
-        theme: 'dark'
+      dropShadow: {
+        enabled: true,
+        top: 1,
+        left: 1,
+        blur: 2,
+        opacity: 0.2
       }
     },
-    series: [
-      {
-        name: 'Desktops',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+    stroke: {
+      curve: 'smooth'
+    },
+    markers: {
+      size: 0
+    },
+    grid: {
+      padding: {
+        // top: 20,
+        // bottom: 10,
+        // left: 110
       }
-    ]
+    },
+    colors: ['#ff00ff'],
+    tooltip: {
+      x: {
+        show: false
+      },
+      y: {
+        title: {
+          formatter: function formatter(val) {
+            return ''
+          }
+        }
+      },
+      theme: 'dark'
+    }
   }
+
+  const series = [
+    {
+      name: 'Desktops',
+      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+    }
+  ]
 
   const fetchGetHistoricalCovidGlobalData = async () => {
     const data = await getHistoricalCovidGlobalData()
@@ -89,8 +88,8 @@ const GlobalGraphView = () => {
           >
             <Card>
               <ReactApexChart
-                options={spark1.options}
-                series={spark1.series}
+                options={options}
+                series={series}
                 type='area'
                 height={200}
               />
