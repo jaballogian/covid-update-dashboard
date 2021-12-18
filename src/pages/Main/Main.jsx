@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 
 // COMPONENTS
-import GlobalDataView from './GlobalDataView/GlobalDataView'
+import GlobalDataView from './GlobalCardView/GlobalCardView'
 import FilterView from './FilterView/FilterView'
-import ListView from './ListView/ListView'
-import TableView from './TableView/TableView'
+import ListView from './CountryListView/CountryListView'
+import TableView from './CountryTableView/CountryTableView'
 
 // CONTEXTS
 import { AllPagesContext } from 'contexts/AllPagesContext'
