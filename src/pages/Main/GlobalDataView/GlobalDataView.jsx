@@ -8,10 +8,16 @@ import Typography from '@mui/material/Typography'
 // SERVICES
 import { getYesterdayCovidGlobalData } from 'services/covid/getCovidApi'
 
+// STYLES
+import useStyles from './globalDataUseStyles'
+
 // UTILS
 import { convertTimestampToStringDate } from 'utils/formatDate'
+import { abbreviateNumber } from 'utils/formatNumberView'
 
 const GlobalDataView = () => {
+  const classes = useStyles()
+
   const [ globalData, setGlobalData ] = useState(null)
 
   const fetchGetYesterdayCovidGlobalData = async () => {
@@ -23,15 +29,15 @@ const GlobalDataView = () => {
   [
     {
       title: 'Total Cases',
-      value: globalData.cases,
+      value: abbreviateNumber(globalData.cases),
     },
     {
       title: 'Total Deaths',
-      value: globalData.deaths,
+      value: abbreviateNumber(globalData.deaths),
     },
     {
       title: 'Total Recovered',
-      value: globalData.recovered,
+      value: abbreviateNumber(globalData.recovered),
     },
     {
       title: 'Updated At',
@@ -44,9 +50,9 @@ const GlobalDataView = () => {
   }, [])
 
   return (
-    <>
+    <div className={classes.globalDataRoot}>
       {cardList &&
-      <Grid container>
+      <Grid container spacing={'24px'}>
         {cardList.map((item, index) => (
           <Grid 
             key={index}
@@ -55,21 +61,27 @@ const GlobalDataView = () => {
             sm={6}
             md={3}
           >
-            <Card>
+            <Card className={classes.itemCard}>
               {/* TITLE */}
-              <Typography>
+              <Typography 
+                variant='h5' 
+                className={classes.cardText}
+              >
                 {item.title}
               </Typography>
 
               {/* VAlUE */}
-              <Typography>
+              <Typography 
+                variant={index !== cardList.length - 1 ? 'h3' : 'h5'} 
+                className={classes.cardText}
+              >
                 {item.value}
               </Typography>
             </Card>
           </Grid>
         ))}
       </Grid>}
-    </>
+    </div>
   )
 }
 
