@@ -272,6 +272,21 @@ const CountryTableView = () => {
     fetchGetYesterdayCovidCountryListApi()
   }, [])
 
+  const textListRowData = (inputItem) => [
+    {
+      title: 'Country Name',
+      className: classes.itemListCountryName,
+      value: inputItem.country,
+    },
+    {
+      title: 'Total Cases',
+      className: classes.itemListNumber,
+      value: isAbbreviated ?
+      abbreviateNumber(inputItem.cases) :
+      inputItem.cases.toLocaleString(),
+    },
+  ]
+
   return (
     <div className={classes.dataGridroot}>
       {/* <DataGrid
@@ -296,23 +311,16 @@ const CountryTableView = () => {
           /> :
           <div className={classes.itemListCountryFlag}/>}
 
-          {/* COUNTRY NAME */}
-          <Typography 
-            variant='subtitle1'
-            className={classes.itemListCountryName}
-          >
-            {item.country}
-          </Typography>
-
-          {/* TOTAL CASES */}
-          <Typography 
-            variant='subtitle1'
-            className={classes.itemListNumber}
-          >
-            {isAbbreviated ?
-            abbreviateNumber(item.cases) :
-            item.cases.toLocaleString()}
-          </Typography>
+          {/* TEXT LIST ROW */}
+          {textListRowData(item).map((columnItem, columnIndex) => (
+            <Typography 
+              key={columnIndex}
+              variant='subtitle1'
+              className={columnItem.className}
+            >
+              {columnItem.value}
+            </Typography>
+          ))}
         </div>
       ))}
     </div>
