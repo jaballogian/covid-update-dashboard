@@ -294,6 +294,14 @@ const CountryTableView = () => {
             alt=''
             className={classes.dataGridCountryFlag}
           />}
+
+          {/* COUNTRY NAME */}
+          <Typography 
+            variant='subtitle1'
+            className={classes.itemListCountryName}
+          >
+            {item.country}
+          </Typography>
         </div>
       ))}
     </div>
