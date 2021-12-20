@@ -122,6 +122,26 @@ const CountryTableView = () => {
 
   return (
     <div className={classes.dataGridroot}>
+      {/* TITLE ROWS */}
+      <div className={classes.itemListRoot}>
+        {covidCountryListData[0] &&
+        textListRowData(covidCountryListData[0]).map((item, index) => (
+          index !== 0 &&
+          <Typography 
+            key={index}
+            variant='subtitle1'
+            className={
+              index === 1 ?
+              classes.itemListCountry :
+              classes.itemListNumber
+            }
+          >
+            {item.title}
+          </Typography>
+        ))}
+      </div>
+
+      {/* DATA ROWS */}
       {covidCountryListData.map((item, index) => (
         // ROWS
         <div 

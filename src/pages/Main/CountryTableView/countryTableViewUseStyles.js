@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '50%',
     marginRight: 20,
   },
+  itemListCountry: {
+    width: 300,
+  },
   itemListCountryName: {
     width: 250,
   },
