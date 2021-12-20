@@ -53,6 +53,11 @@ const CountryTableView = () => {
 
   const textListRowData = (inputItem) => [
     {
+      title: 'Country Flag',
+      className: classes.itemListCountryFlag,
+      value: inputItem.countryInfo.flag,
+    },
+    {
       title: 'Country Name',
       className: classes.itemListCountryName,
       value: inputItem.country,
@@ -118,21 +123,23 @@ const CountryTableView = () => {
   return (
     <div className={classes.dataGridroot}>
       {covidCountryListData.map((item, index) => (
+        // ROWS
         <div 
           key={index}
           className={classes.itemListRoot}
         >
-          {/* FLAG */}
-          {item.countryInfo._id ?
-          <img
-            src={item.countryInfo.flag}
-            alt=''
-            className={classes.itemListCountryFlag}
-          /> :
-          <div className={classes.itemListCountryFlag}/>}
-
-          {/* TEXT LIST ROW */}
+          {/* COLUMNS */}
           {textListRowData(item).map((columnItem, columnIndex) => (
+            columnIndex === 0 ?
+            // FLAG COLUMN
+            (item.countryInfo._id ?
+            <img
+              src={item.countryInfo.flag}
+              alt=''
+              className={classes.itemListCountryFlag}
+            /> :
+            // NUMBER COLUMN
+            <div className={classes.itemListCountryFlag}/>) :
             <Typography 
               key={columnIndex}
               variant='subtitle1'
