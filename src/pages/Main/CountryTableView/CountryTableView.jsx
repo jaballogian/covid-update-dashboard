@@ -309,7 +309,9 @@ const CountryTableView = () => {
             variant='subtitle1'
             className={classes.itemListNumber}
           >
-            {item.cases}
+            {isAbbreviated ?
+            abbreviateNumber(item.cases) :
+            item.cases.toLocaleString()}
           </Typography>
         </div>
       ))}
