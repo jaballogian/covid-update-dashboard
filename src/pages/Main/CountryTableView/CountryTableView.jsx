@@ -282,6 +282,14 @@ const CountryTableView = () => {
         rowsPerPageOptions={[ 10, 25, 50, 125 ]}
         disableColumnMenu
       /> */}
+      {covidCountryListData.map((item, index) => (
+        <div 
+          key={index}
+          className={classes.itemListRoot}
+        >
+          {index}
+        </div>
+      ))}
     </div>
   )
 }

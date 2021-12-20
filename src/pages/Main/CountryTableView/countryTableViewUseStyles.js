@@ -4,8 +4,8 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   dataGridroot: {
     width: '100vw',
-    height: '100vh',
-    overflow: 'hidden',
+    // height: '100vh',
+    // overflow: 'hidden',
   },
   flexContainer: {
     display: 'flex',
@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
   dataGridCountryFlag: {
     width: 30,
     marginRight: 20,
+  },
+  itemListRoot: {
+    display: 'flex',
   },
 }))
 
