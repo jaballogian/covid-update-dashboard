@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   itemListRoot: {
     display: 'flex',
   },
-  dataGridCountryFlag: {
+  itemListCountryFlag: {
     width: 30,
     height: 30,
     borderRadius: '50%',
