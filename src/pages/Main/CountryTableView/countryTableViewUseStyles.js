@@ -4,11 +4,6 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   dataGridroot: {
     width: '100vw',
-    // height: '100vh',
-    // overflow: 'hidden',
-  },
-  flexContainer: {
-    display: 'flex',
   },
   itemListRoot: {
     display: 'flex',
