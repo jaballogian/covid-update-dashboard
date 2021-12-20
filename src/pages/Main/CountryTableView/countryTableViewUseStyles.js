@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   itemListCountryName: {
     width: 250,
   },
+  itemListNumber: {
+    width: 100,
+  },
 }))
 
 export default useStyles

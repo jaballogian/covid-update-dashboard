@@ -302,6 +302,14 @@ const CountryTableView = () => {
           >
             {item.country}
           </Typography>
+
+          {/* TOTAL CASES */}
+          <Typography 
+            variant='subtitle1'
+            className={classes.itemListNumber}
+          >
+            {item.cases}
+          </Typography>
         </div>
       ))}
     </div>
