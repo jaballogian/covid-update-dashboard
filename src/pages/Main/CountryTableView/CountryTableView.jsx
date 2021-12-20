@@ -274,14 +274,14 @@ const CountryTableView = () => {
 
   return (
     <div className={classes.dataGridroot}>
-      <DataGrid
+      {/* <DataGrid
         rows={search ? filteredData : covidCountryListData}
         columns={columns}
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
         rowsPerPageOptions={[ 10, 25, 50, 125 ]}
         disableColumnMenu
-      />
+      /> */}
     </div>
   )
 }
