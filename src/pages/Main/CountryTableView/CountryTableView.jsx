@@ -313,6 +313,13 @@ const CountryTableView = () => {
       abbreviateNumber(inputItem.recovered) :
       inputItem.recovered.toLocaleString(),
     },
+    {
+      title: 'Today Recovered',
+      className: classes.itemListNumber,
+      value: isAbbreviated ?
+      abbreviateNumber(inputItem.todayRecovered) :
+      inputItem.todayRecovered.toLocaleString(),
+    },
   ]
 
   return (
