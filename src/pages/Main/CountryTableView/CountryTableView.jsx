@@ -134,11 +134,15 @@ const CountryTableView = () => {
             // FLAG COLUMN
             (item.countryInfo._id ?
             <img
+              key={columnIndex}
               src={columnItem.value}
               alt=''
               className={columnItem.className}
             /> :
-            <div className={columnItem.className}/>) :
+            <div 
+              key={columnIndex}
+              className={columnItem.className}
+            />) :
             // NUMBER COLUMN
             <Typography 
               key={columnIndex}
