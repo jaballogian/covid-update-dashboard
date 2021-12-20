@@ -288,12 +288,13 @@ const CountryTableView = () => {
           className={classes.itemListRoot}
         >
           {/* FLAG */}
-          {item.countryInfo._id &&
+          {item.countryInfo._id ?
           <img
             src={item.countryInfo.flag}
             alt=''
             className={classes.itemListCountryFlag}
-          />}
+          /> :
+          <div className={classes.itemListCountryFlag}/>}
 
           {/* COUNTRY NAME */}
           <Typography 
