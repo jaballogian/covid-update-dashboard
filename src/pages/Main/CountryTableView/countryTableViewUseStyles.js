@@ -10,12 +10,14 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: 'flex',
   },
-  dataGridCountryFlag: {
-    width: 30,
-    marginRight: 20,
-  },
   itemListRoot: {
     display: 'flex',
+  },
+  dataGridCountryFlag: {
+    width: 30,
+    height: 30,
+    borderRadius: '50%',
+    marginRight: 20,
   },
 }))
 

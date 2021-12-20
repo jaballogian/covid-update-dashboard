@@ -287,7 +287,13 @@ const CountryTableView = () => {
           key={index}
           className={classes.itemListRoot}
         >
-          {index}
+          {/* FLAG */}
+          {item.countryInfo._id &&
+          <img
+            src={item.countryInfo.flag}
+            alt=''
+            className={classes.dataGridCountryFlag}
+          />}
         </div>
       ))}
     </div>
