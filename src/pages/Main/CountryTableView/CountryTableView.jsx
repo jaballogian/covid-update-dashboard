@@ -327,6 +327,13 @@ const CountryTableView = () => {
       abbreviateNumber(inputItem.tests) :
       inputItem.tests.toLocaleString(),
     },
+    {
+      title: 'Population',
+      className: classes.itemListNumber,
+      value: isAbbreviated ?
+      abbreviateNumber(inputItem.population) :
+      inputItem.population.toLocaleString(),
+    },
   ]
 
   return (
