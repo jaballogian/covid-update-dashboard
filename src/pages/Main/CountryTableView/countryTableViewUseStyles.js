@@ -20,8 +20,19 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid gray',
     borderRadius: 4,
     marginBottom: 8,
+    '&:last-child': {
+      marginBottom: 0,
+    },
   },
-  itemTitleRow: {
+  itemTitleRowRoot: {
+    cursor: 'pointer',
+  },
+  itemDataRowRoot: {
+    '&:hover': {
+      backgroundColor: 'gainsboro',
+    },
+  },
+  itemTextBold: {
     fontWeight: 600,
   },
   itemListCountryFlag: {

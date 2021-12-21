@@ -135,7 +135,7 @@ const CountryTableView = () => {
             <Typography 
               key={index}
               variant='subtitle1'
-              className={`${item.className} ${classes.itemTitleRow}`}
+              className={`${item.className} ${classes.itemTextBold} ${classes.itemTitleRowRoot}`}
             >
               {item.title}
             </Typography>
@@ -147,7 +147,7 @@ const CountryTableView = () => {
           // ROWS
           <div 
             key={index}
-            className={classes.itemListRoot}
+            className={`${classes.itemListRoot} ${classes.itemDataRowRoot}`}
           >
             {/* COLUMNS */}
             {textListRowData(item).map((columnItem, columnIndex) => (
@@ -168,7 +168,11 @@ const CountryTableView = () => {
               <Typography 
                 key={columnIndex}
                 variant='subtitle1'
-                className={columnItem.className}
+                className={
+                  columnIndex === 1 ?
+                  `${columnItem.className} ${classes.itemTextBold}` :
+                  columnItem.className
+                }
               >
                 {columnItem.value}
               </Typography>
