@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
     overflowX: 'auto',
   },
   itemListRoot: {
-    width: 'fit-content',
+    width: '100%',
+    minWidth: 'fit-content',
     display: 'flex',
     border: '1px solid gray',
     borderRadius: 4,
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   itemListNumber: {
     flex: 1,
-    minWidth: 125,
+    minWidth: 110,
     padding: 8,
     lineHeight: 1.5,
     display: 'flex',
