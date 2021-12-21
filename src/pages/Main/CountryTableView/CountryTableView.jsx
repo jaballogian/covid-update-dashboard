@@ -121,59 +121,61 @@ const CountryTableView = () => {
   ]
 
   return (
-    <div className={classes.dataGridroot}>
-      {/* TITLE ROWS */}
-      <div className={classes.itemListRoot}>
-        {covidCountryListData[0] &&
-        textListRowData(covidCountryListData[0]).map((item, index) => (
-          index !== 0 &&
-          <Typography 
-            key={index}
-            variant='subtitle1'
-            className={
-              index === 1 ?
-              classes.itemListCountry :
-              classes.itemListNumber
-            }
-          >
-            {item.title}
-          </Typography>
-        ))}
-      </div>
-
-      {/* DATA ROWS */}
-      {covidCountryListData.map((item, index) => (
-        // ROWS
-        <div 
-          key={index}
-          className={classes.itemListRoot}
-        >
-          {/* COLUMNS */}
-          {textListRowData(item).map((columnItem, columnIndex) => (
-            columnIndex === 0 ?
-            // FLAG COLUMN
-            (item.countryInfo._id ?
-            <img
-              key={columnIndex}
-              src={columnItem.value}
-              alt=''
-              className={columnItem.className}
-            /> :
+    <div className={classes.countryTableRoot}>
+      <div className={classes.tableContainer}>
+        {/* TITLE ROWS */}
+        <div className={classes.itemListRoot}>
+          {covidCountryListData[0] &&
+          textListRowData(covidCountryListData[0]).map((item, index) => (
+            index === 0 ?
             <div 
-              key={columnIndex}
-              className={columnItem.className}
-            />) :
-            // NUMBER COLUMN
+              key={index}
+              className={item.className}
+            /> :
             <Typography 
-              key={columnIndex}
+              key={index}
               variant='subtitle1'
-              className={columnItem.className}
+              className={`${item.className} ${classes.itemTitleRow}`}
             >
-              {columnItem.value}
+              {item.title}
             </Typography>
           ))}
         </div>
-      ))}
+
+        {/* DATA ROWS */}
+        {covidCountryListData.map((item, index) => (
+          // ROWS
+          <div 
+            key={index}
+            className={classes.itemListRoot}
+          >
+            {/* COLUMNS */}
+            {textListRowData(item).map((columnItem, columnIndex) => (
+              columnIndex === 0 ?
+              // FLAG COLUMN
+              (item.countryInfo._id ?
+              <img
+                key={columnIndex}
+                src={columnItem.value}
+                alt=''
+                className={columnItem.className}
+              /> :
+              <div 
+                key={columnIndex}
+                className={columnItem.className}
+              />) :
+              // NUMBER COLUMN
+              <Typography 
+                key={columnIndex}
+                variant='subtitle1'
+                className={columnItem.className}
+              >
+                {columnItem.value}
+              </Typography>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
