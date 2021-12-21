@@ -26,6 +26,10 @@ const CountryTableView = () => {
   const classes = useStyles()
 
   const [ filteredData, setFilteredData ] = useState([])
+  const [ selectedSort, setSelectedSort ] = useState({
+    column: null,
+    sort: null,
+  })
 
   const fetchGetYesterdayCovidCountryListApi = async () => {
     let data = await getYesterdayCovidCountryListApi()
@@ -38,6 +42,19 @@ const CountryTableView = () => {
       }
     })
     changeCovidCountryListData(data)
+  }
+
+  const onTitleRowIsClicked = (inputItem) => {
+    let tempSort = null
+    if(selectedSort.column === inputItem.title) {
+      if(!selectedSort.sort) tempSort = { column: inputItem.title, sort: 'asc' }
+      else if(selectedSort.sort === 'asc') tempSort = { column: inputItem.title, sort: 'desc' }
+      else if(selectedSort.sort === 'desc') tempSort = { column: null, sort: null }
+    }
+    else {
+      tempSort = { column: inputItem.title, sort: 'asc' }
+    }
+    setSelectedSort(tempSort)
   }
 
   useEffect(() => {
@@ -136,6 +153,7 @@ const CountryTableView = () => {
               key={index}
               variant='subtitle1'
               className={`${item.className} ${classes.itemTextBold} ${classes.itemTitleRowRoot}`}
+              onClick={() => onTitleRowIsClicked(item)}
             >
               {item.title}
             </Typography>
